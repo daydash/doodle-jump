@@ -143,16 +143,15 @@ function textLifeLine() {
 	// ctx.strokeStyle = "red";
 }
 
-function textSuperSpeed() {
+function textSpeed() {
 	ctx.font = "24px normal";
-	ctx.fillStyle = "red";
-	ctx.fillText("Press S for Super Speed", 300, 42.4);
-	ctx.textAlign = "left";
-}
-function textNormalSpeed() {
-	ctx.font = "24px normal";
-	ctx.fillStyle = "red";
-	ctx.fillText("Press S for Normal Speed", 300, 42.4);
+	ctx.fillStyle = "#FF47CA";
+	if (ultraSpeed) {
+		ctx.fillText("Press S for Normal Speed", 260, 42.4);
+	} else {
+		ctx.fillText("Press S for Super Speed", 260, 42.4);
+	}
+
 	ctx.textAlign = "left";
 }
 
@@ -221,12 +220,11 @@ function loop() {
 		showLifeLine();
 		textLifeLine();
 
+		textSpeed();
 		if (ultraSpeed) {
-			textNormalSpeed();
 			here_the_code_fcked();
-		} else {
-			textSuperSpeed();
 		}
+
 		// textName();
 
 		ctx.fill();
